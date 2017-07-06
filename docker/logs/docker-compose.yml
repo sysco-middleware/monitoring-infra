@@ -18,8 +18,8 @@ services:
       - 39600:9600
       - 35043:5043
     volumes:
-      - logstash/config:/config-dir
-      - logstash/logs:/logs
+      - ./logstash/config:/config-dir
+      - ./logstash/logs:/logs
     command: -f /config-dir/
 #  filebeat:
 #    build: filebeat
