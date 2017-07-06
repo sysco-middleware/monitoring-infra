@@ -1,0 +1,29 @@
+---
+version: '3'
+services:
+  elasticsearch:
+    image: elasticsearch:5.4
+    ports:
+      - 39200:9200
+      - 39300:9300
+    volumes:
+      - ./elasticsearch/data:/usr/share/elasticsearch/data:rw
+  kibana:
+    image: kibana:5.4
+    ports:
+      - 35601:5601
+  logstash:
+    image: logstash:5.4
+    ports:
+      - 39600:9600
+      - 35043:5043
+    volumes:
+      - logstash/config:/config-dir
+      - logstash/logs:/logs
+    command: -f /config-dir/
+#  filebeat:
+#    build: filebeat
+#    volumes:
+#      - cases-logs-volume:/cases/logs:ro
+#      - identity-logs-volume:/identity/logs:ro
+
