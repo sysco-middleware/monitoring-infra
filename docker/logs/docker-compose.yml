@@ -20,6 +20,7 @@ services:
     volumes:
       - ./logstash/config:/config-dir
       - ./logstash/logs:/logs
+      - ./logstash/patterns:/patterns
     command: -f /config-dir/
 #  filebeat:
 #    build: filebeat
