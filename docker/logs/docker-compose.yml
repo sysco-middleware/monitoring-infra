@@ -8,6 +8,8 @@ services:
       - 39300:9300
     volumes:
       - ./elasticsearch/data:/usr/share/elasticsearch/data:rw
+    networks:
+      - elastic-net
   kibana:
     image: kibana:5.4
     ports:
@@ -22,6 +24,8 @@ services:
       - ./logstash/logs:/logs
       - ./logstash/patterns:/patterns
     command: -f /config-dir/
+    networks:
+      - elastic-net
 #  filebeat:
 #    build: filebeat
 #    volumes:
