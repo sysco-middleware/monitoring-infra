@@ -8,14 +8,9 @@ services:
     environment:
       #GF_SERVER_ROOT_URL: http://grafana.server.name
       GF_SECURITY_ADMIN_PASSWORD: admin
-  prometheus:
-    image: prom/prometheus
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - 39090:9090
     networks:
       - infosak_default
+      - default
 networks:
   infosak_default:
     external: true
