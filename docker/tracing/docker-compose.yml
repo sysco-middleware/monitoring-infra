@@ -4,5 +4,5 @@ services:
   jaeger:
     image: jaegertracing/all-in-one:latest
     ports:
-      - 5775:5775/udp
-      - 16686:16686
+      - 35775:5775/udp
+      - 36686:16686
