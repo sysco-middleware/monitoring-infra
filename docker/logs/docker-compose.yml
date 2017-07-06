@@ -10,6 +10,7 @@ services:
       - ./elasticsearch/data:/usr/share/elasticsearch/data:rw
     networks:
       - elastic-net
+      - default
   kibana:
     image: kibana:5.4
     ports:
@@ -26,6 +27,7 @@ services:
     command: -f /config-dir/
     networks:
       - elastic-net
+      - default
 #  filebeat:
 #    build: filebeat
 #    volumes:
