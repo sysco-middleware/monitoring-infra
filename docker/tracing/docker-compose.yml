@@ -6,3 +6,8 @@ services:
     ports:
       - 35775:5775/udp
       - 36686:16686
+    networks: 
+      - jaeger-net
+networks:
+  jaeger-net:
+    driver: bridge
