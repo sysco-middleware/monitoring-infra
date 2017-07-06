@@ -26,4 +26,6 @@ services:
 #    volumes:
 #      - cases-logs-volume:/cases/logs:ro
 #      - identity-logs-volume:/identity/logs:ro
-
+networks:
+  elastic-net:
+    driver: bridge
