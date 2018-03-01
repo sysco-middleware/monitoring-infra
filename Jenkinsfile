@@ -1,7 +1,7 @@
 node {
   stage('Example Build') {
    
-      sh 'mvn -B -DskipTests clean package'
+      sh '/usr/local/apache-maven/apache-maven-3.5.2/bin/mvn -B -DskipTests clean package'
    
   }
 }
