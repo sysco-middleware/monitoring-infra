@@ -1,7 +1,7 @@
 node {
   stage('Example Build') {
    
-      echo 'Hello World'
+      sh 'mvn -B -DskipTests clean package'
    
   }
 }
